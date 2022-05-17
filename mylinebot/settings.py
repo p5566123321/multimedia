@@ -26,12 +26,12 @@ SECRET_KEY = 'django-insecure-r-_x+b9bleda34!qoinfet4b@5wyxpc2ilc&a7p*v4x)2j*t@e
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '5550-36-230-66-99.ngrok.io'
+    '4157-36-230-64-63.ngrok.io'
 ]
 
-LINE_CHANNEL_ACCESS_TOKEN = 'rSchCJFn+Niro0LG5TYyH1VifSLuDILYp0GB9dYTGXWiKR9TZ1KKukbjhpauje3XY1ImLeuqBOsG8tR13sz29hxg/Nwz4OZq2u7xqvRdpPf6jZu6xDW2PR/FJCMwl1GuLWF5N6lLqdAbjs16IkhFtgdB04t89/1O/w1cDnyilFU='
+LINE_CHANNEL_ACCESS_TOKEN = 'nq/w6/1IhJqMCAMq5u6cfcYzAjRzaxqkrobeBrY3aZe5YefNpGznG5vgAUau5Y/jVVo1QSWQfW/lUxKxjRobVR6Vrhq3Y5u2Fk1oxKf93jAycLoQaCG1qzTkFwCmmduHoE7qkLpKcsdFdVFVrZkYxgdB04t89/1O/w1cDnyilFU='
 
-LINE_CHANNEL_SECRET = '1edd3366ad0c99e1295cc90192a337dd'
+LINE_CHANNEL_SECRET = '1cdf6117e37ad29289b658cb93a49373'
 
 # Application definition
 

@@ -40,14 +40,21 @@ def callback(request):
         for event in events:
             if isinstance(event, MessageEvent):  # 如果有訊息事件
                 q=event.message.text
+                if(q=="找不到我要的答案"):
+                    line_bot_api.reply_message(  # 回復傳入的訊息文字
+                        event.reply_token,
+                        TextSendMessage(text="非常抱歉!請填寫表單:\nhttps://forms.gle/7B6MBM17QSYmmrN9A\n將會有專人協助您解決問題。"
+                        )
+                    )
+                    break
                 datas={'question':q}
                 r = requests.post(url, headers=headers,json=datas)
                 t=r.json()['answers'][0]['answer']
                 print(t)
-                if(t!="No good match found in KB."):
+                if(t=="No good match found in KB."):
                     line_bot_api.reply_message(  # 回復傳入的訊息文字
                         event.reply_token,
-                        TextSendMessage(text=t,quick_reply=QuickReply(items=[
+                        TextSendMessage(text="無法識別，請您在輸入一次問題",quick_reply=QuickReply(items=[
                         QuickReplyButton(action=MessageAction(label="找不到我要的答案",text="找不到我要的答案"))
                         ]
                         )
@@ -56,7 +63,7 @@ def callback(request):
                 else:
                     line_bot_api.reply_message(  # 回復傳入的訊息文字
                         event.reply_token,
-                        TextSendMessage(text="無法識別，請您在輸入一次問題",quick_reply=QuickReply(items=[
+                        TextSendMessage(text=t,quick_reply=QuickReply(items=[
                         QuickReplyButton(action=MessageAction(label="找不到我要的答案",text="找不到我要的答案"))
                         ]
                         )
